@@ -78,12 +78,6 @@ namespace Soundsphere_CS_Calc
         {
             float resX, resY, resW, resH;
 
-            //Dictionary<string, int> numbs = new Dictionary<string, int>();
-            //foreach (TextBox tb in numberTextBoxes)
-            //{
-            //    numbs.Add(tb.Name, );
-            //}
-
             float winW = float.Parse(WinW.Text);
             float winH = float.Parse(WinH.Text);
             float csX = float.Parse(CSX.Text);
@@ -95,11 +89,26 @@ namespace Soundsphere_CS_Calc
             float objY1 = float.Parse(ObjY1.Text);
             float objY2 = float.Parse(ObjY2.Text);
 
-            resX = (1 / winH) * (960 - objX1);
-            resY = (1 / winW) * (objY1);
 
-            ResX.Text = resX.ToString("0.0000");
-            ResY.Text = resY.ToString("0.0000");
+            float temp1 = winW * csX;
+            resX = (1 / winH) * (temp1 != 0 ? temp1 - objX1 : objX1);
+
+            float temp2 = winH * csY;
+            resY = (1 / winW) * (temp2 != 0 ? temp2 - objY1 : objY1);
+
+
+            float temp3 = (1 / winH) * (temp1 != 0 ? temp1 - objX2 : objX2);
+            resW = temp3 - resX;
+
+            float temp4 = (1 / winW) * (temp2 != 0 ? temp2 - objY2 : objY2);
+            resH = temp4 - resY;
+
+
+            string format = "0.0000";
+            ResX.Text = resX.ToString(format);
+            ResY.Text = resY.ToString(format);
+            ResW.Text = resW.ToString(format);
+            ResH.Text = resH.ToString(format);
         }
     }
 }

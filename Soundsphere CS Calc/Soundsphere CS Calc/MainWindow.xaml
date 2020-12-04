@@ -64,11 +64,11 @@
                 <Label Grid.Row="0" Grid.Column="2" Content="y"/>
                 <TextBox Grid.Row="0" Grid.Column="3" x:Name="CSY"/>
                 <Label Grid.Row="1" Grid.Column="0" Content="a"/>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="CSA"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="CSA" IsEnabled="False"/>
                 <Label Grid.Row="1" Grid.Column="2" Content="b"/>
-                <TextBox Grid.Row="1" Grid.Column="3" x:Name="CSB"/>
+                <TextBox Grid.Row="1" Grid.Column="3" x:Name="CSB" IsEnabled="False"/>
                 <Label Grid.Row="2" Grid.Column="0" Content="bind"/>
-                <ComboBox Grid.Row="2" Grid.Column="1" x:Name="CSBind">
+                <ComboBox Grid.Row="2" Grid.Column="1" x:Name="CSBind" IsEnabled="False">
                     <ComboBoxItem Content="w"/>
                     <ComboBoxItem Content="h" IsSelected="True"/>
                     <ComboBoxItem Content="min"/>
