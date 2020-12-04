@@ -101,10 +101,5 @@ namespace Soundsphere_CS_Calc
             ResX.Text = resX.ToString("0.0000");
             ResY.Text = resY.ToString("0.0000");
         }
-
-        private void Calculate(object sender, RoutedEventArgs e)
-        {
-            Calculate();
-        }
     }
 }
