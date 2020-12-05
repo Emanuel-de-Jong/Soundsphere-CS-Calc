@@ -20,6 +20,7 @@
         </Style>
         <Style TargetType="TextBox" x:Key="Result" BasedOn="{StaticResource {x:Type TextBox}}">
             <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="Text" Value="0.0000"/>
         </Style>
         <Style TargetType="ComboBox">
             <Setter Property="Width" Value="90"/>
@@ -28,7 +29,7 @@
     </Window.Resources>
     
     <StackPanel>
-        <Expander Header="Window size">
+        <Expander Header="Window size" IsExpanded="False">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -60,20 +61,20 @@
                     <ColumnDefinition Width="8*" />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="x"/>
-                <TextBox Grid.Row="0" Grid.Column="1" x:Name="CSX"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="CSX" Text="0.0"/>
                 <Label Grid.Row="0" Grid.Column="2" Content="y"/>
-                <TextBox Grid.Row="0" Grid.Column="3" x:Name="CSY"/>
+                <TextBox Grid.Row="0" Grid.Column="3" x:Name="CSY" Text="0.0"/>
                 <Label Grid.Row="1" Grid.Column="0" Content="a"/>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="CSA" IsEnabled="False"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="CSA" Text="0.0" IsEnabled="False"/>
                 <Label Grid.Row="1" Grid.Column="2" Content="b"/>
-                <TextBox Grid.Row="1" Grid.Column="3" x:Name="CSB" IsEnabled="False"/>
+                <TextBox Grid.Row="1" Grid.Column="3" x:Name="CSB" Text="0.0" IsEnabled="False"/>
                 <Label Grid.Row="2" Grid.Column="0" Content="bind"/>
-                <ComboBox Grid.Row="2" Grid.Column="1" x:Name="CSBind" IsEnabled="False">
+                <ComboBox Grid.Row="2" Grid.Column="1" x:Name="CSBind" SelectedValuePath="Content">
                     <ComboBoxItem Content="w"/>
                     <ComboBoxItem Content="h" IsSelected="True"/>
-                    <ComboBoxItem Content="min"/>
-                    <ComboBoxItem Content="max"/>
-                    <ComboBoxItem Content="all"/>
+                    <ComboBoxItem Content="min" IsEnabled="False"/>
+                    <ComboBoxItem Content="max" IsEnabled="False"/>
+                    <ComboBoxItem Content="all" IsEnabled="False"/>
                 </ComboBox>
             </Grid>
         </Expander>
