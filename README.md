@@ -7,3 +7,4 @@ While making Soundsphere skins, you constantly have to find the right coordinate
 | | |
 | :---: | :---: |
 | ![](/Screenshots/1-Main-Window.png) | ![](/Screenshots/.png) |
+ 
